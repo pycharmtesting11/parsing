@@ -1,0 +1,10 @@
+from bs4 import BeautifulSoup
+import re
+
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+div = soup.find('div', {'class': 'active-language'})
+# div = soup.find('div', {'class': 'active-language', 'id': '7532'})
+links = div.find_all('a')
+print(links)
