@@ -1,0 +1,12 @@
+from bs4 import BeautifulSoup
+import re
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+
+
+a = soup.find('a', href=re.compile("https://oxford-school.com.ua/price.html"))
+url = a.get('href')
+print(url)
+
+
