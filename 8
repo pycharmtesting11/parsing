@@ -1,0 +1,8 @@
+from bs4 import BeautifulSoup
+import re
+
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+div = soup.find('a', href=re.compile('https://oxford-school$'))
+print(div)
