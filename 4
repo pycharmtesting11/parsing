@@ -1,0 +1,9 @@
+from bs4 import BeautifulSoup
+import re
+
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+div = soup.find('ul').find_parent('div') # ищет снизу вверх
+print(div)
+
