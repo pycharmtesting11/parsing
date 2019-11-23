@@ -1,0 +1,10 @@
+from bs4 import BeautifulSoup
+import re
+
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+div = soup.find_all('a')
+for i in div:
+    link = i.get('href')
+    print(link)
