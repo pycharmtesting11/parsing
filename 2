@@ -1,0 +1,9 @@
+from bs4 import BeautifulSoup
+import re
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+# <meta charset="utf-8">
+div = soup.find('meta')
+search_2 = div.get('charset')
+print(search_2)
