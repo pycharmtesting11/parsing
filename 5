@@ -1,0 +1,22 @@
+from bs4 import BeautifulSoup
+import re
+
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+div = soup.find('div', class_='active-language')
+links = div.find_all('a')
+#print(div)
+print(links)
+
+
+
+
+
+'''					<div class="active-language">
+							<a href="https://oxford-school.com.ua/price.html" hreflang="ru">RU</a>
+							<a href="https://oxford-school.com.ua/uk/price.html" hreflang="uk">UA</a>
+						safadfsad
+						asdfasdfdsaf
+					</div>
+'''
