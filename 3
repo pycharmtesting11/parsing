@@ -1,0 +1,23 @@
+from bs4 import BeautifulSoup
+import re
+
+html = open('english.html').read()
+soup = BeautifulSoup(html, 'lxml')
+
+div = soup.find('ul').next_sibling
+print(div)
+
+'''	
+    				<div class="active-language">
+						RU <span class="arrow-icon"></span>
+						<ul class="language-selector">
+
+							<li><a href="https://oxford-school.com.ua/price.html" hreflang="ru">RU</a></li>
+							<li><a href="https://oxford-school.com.ua/uk/price.html" hreflang="uk">UA</a></li>
+						</ul>
+						safadfsad
+						asdfasdfdsaf
+					</div>
+
+<ul class="top-menu">
+'''
